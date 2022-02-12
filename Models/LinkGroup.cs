@@ -1,4 +1,4 @@
-namespace Menu;
+namespace Navigation;
 
 public class LinkGroup : IEntity, IKey
 {

@@ -4,8 +4,11 @@
         {
             "name": "MenuItems",
             "hasGuid": true,
-            "hasOrder": true,
             "columns": [
+                {
+                    "name": "HierarchyGuid",
+                    "isUnique": true
+                },
                 {
                     "name": "Url"
                 },
@@ -43,6 +46,32 @@
                     ],
                     "isUnique": true
                 }
+            ]
+        }
+    ],
+    "views": [
+        {
+            "name": "MenuItemViews",
+            "query": [
+                "select",
+                "    mi.*,",
+                "    thv.EntityTypeGuid,",
+                "    thv.Title,",
+                "    thv.IconGuid,",
+                "    thv.IconSvg,",
+                "    thv.ParentId,",
+                "    thv.Description,",
+                "    thv.Show,",
+                "    thv.ItemsCount,",
+                "    thv.Slug,",
+                "    thv.Level,",
+                "    thv.IsLeaf,",
+                "    thv.Order,",
+                "    thv.Key,",
+                "    thv.Path",
+                "from MenuItems mi",
+                "inner join Taxonomy.HierarchyViews thv",
+                "on mi.Guid = thv.Guid"
             ]
         }
     ]

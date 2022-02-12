@@ -1,8 +1,8 @@
-// namespace Navigation;
+namespace Navigation;
 
-// public class MenuItemBusiness : TreeBusiness<MenuItemView, MenuItem>
-// {
-//     protected override Read<MenuItemView> Read => Repository.Read;
+public class MenuItemBusiness : TreeBusiness<MenuItemView, MenuItem>
+{
+    protected override Read<MenuItemView> Read => Repository.MenuItemView;
 
-//     protected override Write<MenuItem> Write => Repository.Write;
-// }
+    protected override Write<MenuItem> Write => Repository.MenuItem;
+}

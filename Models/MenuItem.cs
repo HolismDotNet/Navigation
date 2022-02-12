@@ -1,6 +1,6 @@
-namespace Menu;
+namespace Navigation;
 
-public class MenuItem : IEntity, IGuid, IOrder
+public class MenuItem : IEntity, IGuid
 {
     public MenuItem()
     {
@@ -11,11 +11,11 @@ public class MenuItem : IEntity, IGuid, IOrder
 
     public Guid Guid { get; set; }
 
+    public Guid HierarchyGuid { get; set; }
+
     public string Url { get; set; }
 
     public string IsDirectory { get; set; }
-
-    public long Order { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }

@@ -35,6 +35,9 @@
                     "name": "LinkGroupId"
                 },
                 {
+                    "name": "Text"
+                },
+                {
                     "name": "Url"
                 }
             ],

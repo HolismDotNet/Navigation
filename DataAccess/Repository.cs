@@ -2,27 +2,27 @@ namespace Menu;
 
 public class Repository
 {
-    public static Repository<Menu.LinkGroup> LinkGroup
+    public static Write<Menu.LinkGroup> LinkGroup
     {
         get
         {
-            return new Repository<Menu.LinkGroup>(new MenuContext());
+            return new Write<Menu.LinkGroup>(new MenuContext());
         }
     }
 
-    public static Repository<Menu.Link> Link
+    public static Write<Menu.Link> Link
     {
         get
         {
-            return new Repository<Menu.Link>(new MenuContext());
+            return new Write<Menu.Link>(new MenuContext());
         }
     }
 
-    public static Repository<Menu.MenuItem> MenuItem
+    public static Write<Menu.MenuItem> MenuItem
     {
         get
         {
-            return new Repository<Menu.MenuItem>(new MenuContext());
+            return new Write<Menu.MenuItem>(new MenuContext());
         }
     }
 }

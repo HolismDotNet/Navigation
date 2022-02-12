@@ -1,0 +1,49 @@
+{
+    "name": "Navigation",
+    "tables": [
+        {
+            "name": "MenuItems",
+            "hasGuid": true,
+            "hasOrder": true,
+            "columns": [
+                {
+                    "name": "Url"
+                },
+                {
+                    "name": "IsDirectory",
+                    "isGenerated": true,
+                    "formula": "Url is null or trim(Url) != ''"
+                }
+            ]
+        },
+        {
+            "name": "LinkGroups",
+            "hasKey": true,
+            "columns": [
+                {
+                    "name": "Title"
+                }
+            ]
+        },
+        {
+            "name": "Links",
+            "columns": [
+                {
+                    "name": "LinkGroupId"
+                },
+                {
+                    "name": "Url"
+                }
+            ],
+            "indexes": [
+                {
+                    "columns": [
+                        "LinkGroupId",
+                        "Url"
+                    ],
+                    "isUnique": true
+                }
+            ]
+        }
+    ]
+}

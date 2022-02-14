@@ -15,7 +15,7 @@ public class MenuItem : IEntity, IGuid
 
     public string Url { get; set; }
 
-    public string IsDirectory { get; set; }
+    public bool IsDirectory { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }

@@ -16,7 +16,7 @@
                     "name": "IsDirectory",
                     "type": "boolean",
                     "isGenerated": true,
-                    "formula": "Url is null or trim(Url) != ''"
+                    "formula": "Url is null or trim(Url) = ''"
                 }
             ]
         },

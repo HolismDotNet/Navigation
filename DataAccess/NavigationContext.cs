@@ -16,7 +16,7 @@ public class NavigationContext : DatabaseContext
     {
         builder.Entity<MenuItem>()
             .Property(p => p.IsDirectory)
-            .HasComputedColumnSql("Url is null or trim(Url) != ''");
+            .HasComputedColumnSql("Url is null or trim(Url) = ''");
         base.OnModelCreating(builder);
     }
 }

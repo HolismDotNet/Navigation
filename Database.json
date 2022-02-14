@@ -59,6 +59,7 @@
             "query": [
                 "select",
                 "    mi.*,",
+                "    thv.Id as HierarchyId,",
                 "    thv.EntityTypeGuid,",
                 "    thv.Title,",
                 "    thv.IconGuid,",

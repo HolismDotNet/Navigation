@@ -11,9 +11,9 @@ public class MenuItemView : IEntity, IGuid, ISlug, IKey, IOrder, IParent
 
     public Guid Guid { get; set; }
 
-    public string Url { get; set; }
-
     public Guid HierarchyGuid { get; set; }
+
+    public string Url { get; set; }
 
     public bool? IsDirectory { get; set; }
 

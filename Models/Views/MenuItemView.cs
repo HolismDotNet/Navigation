@@ -31,7 +31,7 @@ public class MenuItemView : IEntity, IGuid, ISlug, IKey, IOrder, IParent
 
     public string Description { get; set; }
 
-    public bool? Show { get; set; }
+    public bool? IsActive { get; set; }
 
     public int? ItemsCount { get; set; }
 

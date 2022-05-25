@@ -24,6 +24,6 @@ public class MenuItemController : TreeController<MenuItemView, MenuItem>
     public override Action<long> PreDeletion => id =>
     {
         var hierarchyGuid = Business.Get(id).HierarchyGuid;
-        new HierarchyBusiness().Delete(hierarchyGuid);
+        new HierarchyBusiness().DeleteByGuid(hierarchyGuid);
     };
 }

@@ -7,7 +7,7 @@
             "columns": [
                 {
                     "name": "HierarchyGuid",
-                    "isUnique": true
+                    "unique": true
                 },
                 {
                     "name": "Url"
@@ -48,7 +48,7 @@
                         "LinkGroupId",
                         "Url"
                     ],
-                    "isUnique": true
+                    "unique": true
                 }
             ]
         }

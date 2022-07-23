@@ -9,7 +9,7 @@ public class MenuItemBusiness : TreeBusiness<MenuItemView, MenuItem>
     public object GetMenu()
     {
         var menu = Cache.Get("Menu");
-        if (menu != null) 
+        if (menu != null)
         {
             return menu;
         }
@@ -22,11 +22,32 @@ public class MenuItemBusiness : TreeBusiness<MenuItemView, MenuItem>
         return node.HierarchyId;
     }
 
-    public Dictionary<string, List<MenuItemView>> LoadCache()
+    public Dictionary<string, object> LoadCache()
     {
-        var result = new Dictionary<string, List<MenuItemView>>();
+        var result = new Dictionary<string, object>();
         var menu = GetTree();
-        result.Add("Menu", menu);
+        result.Add("Menu", Modify(menu));
         return result;
+    }
+
+    private object Modify(List<MenuItemView> menu)
+    {
+        var modified = new List<dynamic>();
+        foreach (var item in menu)
+        {
+            dynamic modifiedItem = new ExpandoObject();
+            modifiedItem.Id = item.Id;
+            modifiedItem.Url = item.Url;
+            modifiedItem.IsDirectory = item.IsDirectory;
+            modifiedItem.Title = item.Title;
+            modifiedItem.IconSvg = item.IconSvg;
+            modifiedItem.IsLeaf = item.IsLeaf;
+            if (item.RelatedItems.Children.Count > 0)
+            {
+                modifiedItem.Children = Modify(item.RelatedItems.Children);
+            }
+            modified.Add(modifiedItem);
+        }
+        return modified;
     }
 }
